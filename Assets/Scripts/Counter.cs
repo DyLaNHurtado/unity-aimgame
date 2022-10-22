@@ -19,6 +19,5 @@ public class Counter : MonoBehaviour
         gameManagerScript.SpawnTarget();
         gameManagerScript.updateCount(countValue);
         Destroy(gameObject);
-        Destroy(other.gameObject);
     }
 }

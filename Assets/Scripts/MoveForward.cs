@@ -23,12 +23,13 @@ public class MoveForward : MonoBehaviour
     
     }
     
-    void OnCollisionEnter(Collision collision){
+    void OnTriggerEnter(Collider collision){
     	if(collision.gameObject.tag=="Target"){
     		gameManagerScript.addStreakTarget();
     	}else{
     		gameManagerScript.resetStreakTarget();
     	}
+        Destroy(gameObject);
     }
     
     private Vector3 GetPositionForce(){
