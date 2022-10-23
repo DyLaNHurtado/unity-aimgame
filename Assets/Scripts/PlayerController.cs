@@ -8,17 +8,18 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Vector3 offset;
+    private GameManager gameManagerScript;
 
     
     void Start()
     {
-        
+        gameManagerScript = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse0)){
+        if(Input.GetKeyDown(KeyCode.Mouse0) && !gameManagerScript.isGameOver){
         	Instantiate(bulletPrefab, offset,bulletPrefab.transform.rotation);
         }
     }

@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 	private int count;
 	private int streak;
 	private int index;
+	public bool isGameOver;
 	[SerializeField] private List<GameObject> targetPrefabs;
 	
 	
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
     	count = 0;
 		streak = 0;
 		index = 0;
+		isGameOver = false;
     }
 
 
@@ -57,10 +59,14 @@ public class GameManager : MonoBehaviour
     	streak++;
 		Debug.Log(streak);
     	updateIndex();
+		streakText.text = "x"+streak;
+		Debug.Log(streakText.text);
+
     }
     public void resetStreakTarget(){
     	streak = 0;
     	updateIndex();
+		streakText.text = "";
     }
     
     private void updateIndex(){
@@ -71,7 +77,7 @@ public class GameManager : MonoBehaviour
     	}else{
     	index = 2;
     	}
-		streakText.text = "x" + streak;
+		
     }
     
 }
