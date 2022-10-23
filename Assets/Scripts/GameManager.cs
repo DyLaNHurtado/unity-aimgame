@@ -76,8 +76,9 @@ public class GameManager : MonoBehaviour
     	index = 1;
     	}else{
     	index = 2;
-    	}
-		
+    	}	
     }
+
+	
     
 }
